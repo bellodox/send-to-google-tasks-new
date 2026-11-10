@@ -1,0 +1,47 @@
+{
+  "action": {
+    "default_icon": {
+      "16": "images/bookmark_16.png",
+      "24": "images/bookmark_24.png",
+      "32": "images/bookmark_32.png",
+      "48": "images/bookmark_48.png"
+    },
+    "default_title": "Send to Google Tasks"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "description": "Send links and pages to Google Tasks. Optionally review title, due date, and details before sending.",
+  "icons": {
+    "128": "images/bookmark_128.png",
+    "16": "images/bookmark_16.png",
+    "32": "images/bookmark_32.png",
+    "48": "images/bookmark_48.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkBHiOEmbzCINo5fZVWi+lKEvpxpxiZnsVJ9iWRYUcGnM/AWq52rzSZiMkunEB6jF96bkBoeUc6l3wGxw1AydZ3H3gyYr5nEGrpYsioMskfpYcqFQlkroKWYIkfkQ+tzzDAwzmuNcFYtaOipZlv1Z6RqrzDbXtfP3KIc4QO0DSVI1bT9LWh9iRh/WDreOVC8o2jqekvirYU/5tWd/9z/uTeu4w2sv8EgjCntCk9D0IH33WlAysI1fUUbgWEV1c5Jbon40F6siCYjEUStwQJkAvnVJbvUQsncLw3eiVesLF0f6nIE3BVpg7H6pJiNc/fNOcFyCmBeP0WTzyw+Q49vFUwIDAQAB",
+  "manifest_version": 3,
+  "minimum_chrome_version": "116",
+  "name": "Send to Google Tasks",
+  "oauth2": {
+    "client_id": "639946696688-cc30572ddrbb77dpqu9nf5fugitg9o9c.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/tasks"
+    ]
+  },
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "options.html"
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "identity",
+    "notifications",
+    "storage"
+  ],
+  "version": "1.8.1.1"
+}

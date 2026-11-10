@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Send to Google Tasks options</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <h1>Send to Google Tasks</h1>
+
+    <section>
+        <h2>Task list</h2>
+        <p class="hint">Where the toolbar button and the right-click menu send things.</p>
+        <div id="tasklists"></div>
+        <p id="tasklist-status" class="hint" role="status"></p>
+        <button id="signin" hidden>Sign in to Google to see your lists</button>
+        <button id="signout" hidden>Sign out</button>
+        <p class="hint">Sign out to use a different Google account; the next send asks you to choose one. Local sign-out does not confirm that Google revoked the authorization. To revoke the grant, use <a href="https://myaccount.google.com/connections" target="_blank" rel="noopener">Google Account connections</a>.</p>
+    </section>
+
+    <section>
+        <h2>Due date</h2>
+        <label>New tasks are due
+            <select id="duedays">
+                <option value="">never (no due date)</option>
+                <option value="0">today</option>
+                <option value="1">tomorrow</option>
+                <option value="2">in 2 days</option>
+                <option value="3">in 3 days</option>
+                <option value="7">in a week</option>
+            </select>
+        </label>
+        <p class="hint">To give one page its own date, right-click the toolbar button and pick "due today", "due tomorrow" or "due in a week".</p>
+    </section>
+
+    <section class="review-section">
+        <h2>Review before sending</h2>
+        <label class="checkbox-setting" for="review-before-send">
+            <input id="review-before-send" type="checkbox">
+            <span><strong>Ask me to edit every task</strong><small>Open an editor for title, due date, and details before creating a task. When unchecked, keep one-click sending.</small></span>
+        </label>
+        <p class="hint" id="review-saved" role="status"></p>
+    </section>
+
+    <section>
+        <h2>Toolbar icon</h2>
+        <div class="icons">
+            <label><input type="radio" name="icon" value="black"> <img src="images/bookmark_32.png" alt=""> black</label>
+            <label><input type="radio" name="icon" value="white"> <img class="on-dark" src="images/bookmark_32w.png" alt=""> white, for dark toolbars</label>
+            <label><input type="radio" name="icon" value="blue"> <img src="images/bookmark_32b.png" alt=""> blue</label>
+        </div>
+    </section>
+
+    <section>
+        <h2>Help</h2>
+        <p class="hint">If sending doesn't work, email this with your question to <a href="mailto:yukinying+webstore@gmail.com">yukinying+webstore@gmail.com</a>. It has the extension version and the result of the last send, never the page.</p>
+        <pre id="diagnostics"></pre>
+        <button id="copy">Copy</button>
+    </section>
+
+    <footer class="hint">Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noopener">Pixel perfect</a> from <a href="https://www.flaticon.com" target="_blank" rel="noopener">Flaticon</a>.</footer>
+
+    <script type="module" src="options.js"></script>
+</body>
+
+</html>

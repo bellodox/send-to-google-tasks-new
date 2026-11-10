@@ -1,0 +1,84 @@
+/* Lets Chrome draw links, buttons and selects in their dark forms in dark mode. */
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    font: 14px/1.5 system-ui, sans-serif;
+    color: #202124;
+    background: #fff;
+    max-width: 36rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 1rem;
+    margin: 1.5rem 0 0.25rem;
+}
+
+.hint {
+    color: #5f6368;
+    margin: 0.25rem 0;
+}
+
+#tasklists label,
+.icons label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+}
+
+.icons img {
+    width: 16px;
+    height: 16px;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.icons img.on-dark {
+    background: #3c4043;
+}
+
+pre {
+    white-space: pre-wrap;
+    font-size: 12px;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background: rgb(127 127 127 / 12%);
+}
+
+footer {
+    margin-top: 2.5rem;
+}
+
+footer a {
+    color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #e8eaed;
+        background: #202124;
+    }
+
+    .hint {
+        color: #9aa0a6;
+    }
+
+    .icons img:not(.on-dark) {
+        background: #e8eaed;
+    }
+}
+
+.review-section {margin:24px 0;padding:16px;border:1px solid #c9d9d0;border-radius:12px;background:rgba(45,132,87,.04)}
+.checkbox-setting {display:flex;gap:12px;align-items:flex-start;cursor:pointer;padding-top:7px}
+.checkbox-setting input {width:19px;height:19px;flex-shrink:0;accent-color:#207751;margin:3px 0}
+.checkbox-setting strong {display:block;font-weight:700}
+.checkbox-setting small {display:block;color:#5f6368;line-height:1.5;margin-top:4px}
+@media (prefers-color-scheme:dark) { .review-section {border-color:#465e52;background:rgba(82,180,115,.07)} .checkbox-setting small {color:#a4b9ac} }

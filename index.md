@@ -1,27 +1,37 @@
-# ![icon](https://send-to-google-tasks.github.io/bookmark_128.png) Send to Google Tasks
+---
+title: Send to Google Tasks — community patch
+---
 
-_Send to Google Tasks_ is a chrome extension that performs one simple thing: it send the page or link from your chrome browser to Google Tasks.
+# Send to Google Tasks for Opera
 
-### Installation
+**Review a page, link, or selected text before creating a Google Task.** An optional local editor lets you change the **title**, **due date**, and **details** before submitting. When editing is disabled, the original direct-send workflow remains available.
 
-1. Go to the [extension](https://chrome.google.com/webstore/detail/send-to-google-tasks/acomfpnllcpggnclcogaiceicgljnbac) page.
-2. Click the "Add to Chrome" button.
-3. On any web page that you want to send to Google Tasks, right click to show menu, and then choose "Send to Google Tasks".
-4. When prompted with granting permissions, as the app is still being verified by Google, click "Advanced", and then "Go to Send to Google Tasks (unsafe)".
-5. Click "Allow" to allow the extension to write to Google Tasks.
-6. Done!
+> **Unofficial development build.** This is a community-maintained patch to an installed extension; it is **not** the official Chrome Web Store release and does not imply endorsement by the original developer.
 
-### Quick Demo
-[![click to see a quick demo](http://img.youtube.com/vi/btwAajcj7X8/0.jpg)](https://youtu.be/btwAajcj7X8)
+## Install (Opera / Chromium)
 
-### Why Google API Permissions are required
+1. Download the source from the [`new` branch](https://github.com/bellodox/send-to-google-tasks-new/tree/new).
+2. Extract it to a permanent directory and open `opera://extensions`.
+3. Enable **Developer mode** and choose **Load unpacked**.
+4. Select the `extension` directory (the one containing `manifest.json`).
+5. Disable the original extension, so that two copies do not process the same command.
+6. Open **Options** and enable **Ask me to edit every task** to review the title, due date, and details before adding the task.
 
-While this application only runs within your chrome browser, Google API requires the application to access your data via OAuth access token. That means whoever have access to your token can access your data on your behalf. We keep your token inside the chrome browser. The permission that is granted is Google Tasks API write permissions, which is required to write to Google Tasks. 
+For existing users, verify the selected Google account and destination task list in Options. **Test with a separate account containing non-sensitive tasks before connecting an important account.**
 
-### Privacy Policy
+## What's changed
 
-The privacy policy can be found [here](/privacy).
+- Optional edit-before-send dialog, default **off**; your task is not created until you select **Add to Google Tasks**.
+- Drafts use temporary extension-session storage and are discarded when closed, submitted or expired.
+- Prevents silent fallback to another Google account and checks the destination task list.
+- Validates OAuth redirect and request state; limits parallel login and duplicate submission behavior.
+- Sign-out removes local credentials but **cannot confirm Google-side revocation**. To revoke the grant, use [Google's account connections page](https://myaccount.google.com/connections).
+- No third-party analytics or developer-operated data collection service is present in the reviewed application code.
 
-### Attributions
+## Permissions and limitations
 
-Icons made by Pixel perfect (https://www.flaticon.com/authors/pixel-perfect) from Flaticon (https://www.flaticon.com).
+The extension requests `activeTab`, `contextMenus`, `identity`, `notifications`, and `storage`. It uses Google's Tasks OAuth scope, which grants **read and write access to Google Tasks**, not create-only access. Current application code only lists task lists and creates user-requested tasks. Your task titles, notes, URLs, and selected text are sent directly to Google's Tasks API when you submit. Avoid including passwords, access tokens, or confidential URLs in task details.
+
+The existing publisher-owned OAuth configuration is still used. The compatible web-based login flow is not yet upgraded to authorization-code + PKCE. Live Google sign-in and task creation were **not** validated in this build; offline regression tests cover expected application behavior.
+
+For more details, read the [privacy notice](privacy) and [source/installation notes](https://github.com/bellodox/send-to-google-tasks-new/blob/new/README-LOCAL-PATCH.md).

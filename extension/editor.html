@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Review task — Send to Google Tasks</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <main class="shell">
+        <header class="head">
+            <div class="symbol" aria-hidden="true">✓</div>
+            <div>
+                <div class="eyebrow">SEND TO GOOGLE TASKS</div>
+                <h1>Review task</h1>
+            </div>
+        </header>
+        <p class="intro">Edit the task before sending it to your chosen Google Tasks account.</p>
+        <form id="task-form" autocomplete="off">
+            <label class="field" for="title">Title <span class="required">*</span></label>
+            <input id="title" name="title" type="text" required maxlength="1024" autofocus>
+            <div class="row">
+                <div class="date-field">
+                    <label class="field" for="due">Due date</label>
+                    <input id="due" name="due" type="date" min="1900-01-01" max="9999-12-31">
+                </div>
+                <button id="clear-date" class="text-button" type="button">No due date</button>
+            </div>
+            <label class="field" for="notes">Details</label>
+            <textarea id="notes" name="notes" rows="9" maxlength="8192" spellcheck="true"></textarea>
+            <div class="note">The original page URL and any selected text are editable. Remove sensitive data before sending.</div>
+            <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+            <div class="actions">
+                <button id="cancel" class="button secondary" type="button">Cancel</button>
+                <button id="submit" class="button primary" type="submit">Add to Google Tasks</button>
+            </div>
+        </form>
+        <div class="foot">Stored only for this session until submitted or expired. <a href="options.html" target="_blank" rel="noopener">Options</a></div>
+    </main>
+    <script type="module" src="editor.js"></script>
+</body>
+</html>

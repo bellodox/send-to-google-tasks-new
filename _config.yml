@@ -1,3 +1,7 @@
 theme: jekyll-theme-cayman
-title: Send To Google Tasks
-name: Send To Google Tasks
+title: Send to Google Tasks — Community Patch
+description: Unofficial Opera extension security patch with optional task review
+exclude:
+  - extension
+  - tests
+  - README-LOCAL-PATCH.md
