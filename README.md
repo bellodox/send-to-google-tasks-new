@@ -29,3 +29,5 @@ node --experimental-default-type=module --test tests/extension.test.mjs
 Google's `tasks` scope can read and modify all of an account's Google Tasks, although the current implementation only reads task-list metadata and creates tasks on explicit user action. The web login still uses OAuth implicit grant with added state/redirect checks, **not PKCE**; it relies on OAuth client configuration controlled by the original publisher. The local sign-out cannot guarantee successful server-side OAuth revocation; remove third-party access at [Google Account connections](https://myaccount.google.com/connections). The review dialog holds drafts only in local session storage. No live OAuth or Google Tasks write test was performed; the tests are mocked.
 
 Do not treat this branch as an official Web Store update or a security-certified release. User should review the source before authorizing important accounts.
+
+Developed with [SpeXcode - Open-Source Harness for Agentic Engineering as VS Code extension](https://github.com/SpaceXpanse/SpeXcode).
