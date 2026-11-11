@@ -35,3 +35,5 @@ The extension requests `activeTab`, `contextMenus`, `identity`, `notifications`,
 The existing publisher-owned OAuth configuration is still used. The compatible web-based login flow is not yet upgraded to authorization-code + PKCE. Live Google sign-in and task creation were **not** validated in this build; offline regression tests cover expected application behavior.
 
 For more details, read the [privacy notice](privacy) and [source/installation notes](https://github.com/bellodox/send-to-google-tasks-new/blob/new/README-LOCAL-PATCH.md).
+
+Developed with [SpeXcode](https://github.com/SpaceXpanse/SpeXcode).
