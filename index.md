@@ -36,4 +36,4 @@ The existing publisher-owned OAuth configuration is still used. The compatible w
 
 For more details, read the [privacy notice](privacy) and [source/installation notes](https://github.com/bellodox/send-to-google-tasks-new/blob/new/README-LOCAL-PATCH.md).
 
-Developed with [SpeXcode](https://github.com/SpaceXpanse/SpeXcode).
+Developed with [SpeXcode - Open-Source Harness for Agentic Engineering as VS Code extension](https://github.com/SpaceXpanse/SpeXcode).
